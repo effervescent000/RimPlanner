@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rimplanner.MainWindowController">
+    <children>
+        <TableView fx:id="pawnTable" layoutX="14.0" layoutY="14.0" prefHeight="374.0" prefWidth="232.0">
+            <columns>
+                <TableColumn fx:id="nameCol" prefWidth="75.0" text="Name" />
+                <TableColumn fx:id="ageCol" prefWidth="75.0" text="Age" />
+                <TableColumn fx:id="genderCol" prefWidth="75.0" text="Gender" />
+            </columns>
+        </TableView>
+        <ProgressBar fx:id="shootingBar" layoutX="403.0" layoutY="44.0" prefHeight="18.0" prefWidth="136.0" progress="0.0" />
+        <Label layoutX="338.0" layoutY="45.0" text="Shooting" />
+        <ProgressBar fx:id="socialBar" layoutX="403.0" layoutY="62.0" prefHeight="18.0" prefWidth="136.0" progress="0.0" />
+        <Label layoutX="338.0" layoutY="63.0" text="Social" />
+        <ProgressBar fx:id="animalBar" layoutX="403.0" layoutY="80.0" prefHeight="18.0" prefWidth="136.0" progress="0.0" />
+        <ProgressBar fx:id="doctorBar" layoutX="403.0" layoutY="98.0" prefHeight="18.0" prefWidth="136.0" progress="0.0" />
+        <ProgressBar fx:id="cookingBar" layoutX="403.0" layoutY="116.0" prefHeight="18.0" prefWidth="136.0" progress="0.0" />
+        <ProgressBar fx:id="miningBar" layoutX="403.0" layoutY="152.0" prefHeight="18.0" prefWidth="136.0" progress="0.0" />
+        <ProgressBar fx:id="constructionBar" layoutX="403.0" layoutY="170.0" prefHeight="18.0" prefWidth="136.0" progress="0.0" />
+        <ProgressBar fx:id="craftingBar" layoutX="403.0" layoutY="183.0" prefHeight="18.0" prefWidth="136.0" progress="0.0" />
+        <ProgressBar fx:id="researchBar" layoutX="403.0" layoutY="201.0" prefHeight="18.0" prefWidth="136.0" progress="0.0" />
+        <Label layoutX="338.0" layoutY="81.0" text="Animals" />
+        <Label layoutX="338.0" layoutY="99.0" text="Medical" />
+        <Label layoutX="338.0" layoutY="117.0" text="Cooking" />
+        <Label layoutX="338.0" layoutY="152.0" text="Mining" />
+        <Label layoutX="335.0" layoutY="171.0" text="Construction" />
+        <Label layoutX="338.0" layoutY="184.0" text="Crafting" />
+        <Label layoutX="338.0" layoutY="202.0" text="Research" />
+      <ProgressBar fx:id="gardeningBar" layoutX="403.0" layoutY="134.0" prefHeight="18.0" prefWidth="136.0" progress="0.0" />
+      <Label layoutX="338.0" layoutY="135.0" text="Gardening" />
+      <Button fx:id="addPawnButton" layoutX="265.0" layoutY="319.0" mnemonicParsing="false" text="Add Pawn" />
+      <Button fx:id="editPawnButton" layoutX="265.0" layoutY="344.0" mnemonicParsing="false" text="Edit Pawn" />
+      <Button fx:id="exportButton" layoutX="524.0" layoutY="319.0" mnemonicParsing="false" text="Export" />
+      <Button fx:id="importButton" layoutX="523.0" layoutY="344.0" mnemonicParsing="false" text="Import" />
+    </children>
+</AnchorPane>
