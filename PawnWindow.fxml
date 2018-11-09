@@ -20,125 +20,125 @@
         <RadioButton fx:id="fRadio" layoutX="273.0" layoutY="18.0" mnemonicParsing="false" text="F" toggleGroup="$genderGroup" />
         <Label layoutX="14.0" layoutY="48.0" text="Shooting" />
         <Label layoutX="14.0" layoutY="65.0" text="Melee" />
-        <Label layoutX="14.0" layoutY="82.0" text="Social" />
-        <Label layoutX="14.0" layoutY="99.0" text="Animals" />
-        <Label layoutX="14.0" layoutY="116.0" text="Medicine" />
-        <Label layoutX="14.0" layoutY="133.0" text="Cooking" />
-        <Label layoutX="14.0" layoutY="150.0" text="Gardening" />
-        <Label layoutX="14.0" layoutY="167.0" text="Mining" />
-        <Label layoutX="14.0" layoutY="184.0" text="Construction" />
-        <Label layoutX="14.0" layoutY="200.0" text="Crafting" />
-        <Label layoutX="14.0" layoutY="218.0" text="Art" />
-        <Label layoutX="14.0" layoutY="235.0" text="Research" />
-        <Slider fx:id="animalSlider" layoutX="82.0" layoutY="101.0" majorTickUnit="1.0" max="20.0" minorTickCount="0" snapToTicks="true" />
+        <Label layoutX="14.0" layoutY="223.0" text="Social" />
+        <Label layoutX="14.0" layoutY="151.0" text="Animals" />
+        <Label layoutX="14.0" layoutY="206.0" text="Medicine" />
+        <Label layoutX="14.0" layoutY="118.0" text="Cooking" />
+        <Label layoutX="14.0" layoutY="135.0" text="Gardening" />
+        <Label layoutX="14.0" layoutY="100.0" text="Mining" />
+        <Label layoutX="14.0" layoutY="82.0" text="Construction" />
+        <Label layoutX="14.0" layoutY="169.0" text="Crafting" />
+        <Label layoutX="14.0" layoutY="187.0" text="Art" />
+        <Label layoutX="14.0" layoutY="241.0" text="Research" />
+        <Slider fx:id="animalSlider" layoutX="82.0" layoutY="153.0" majorTickUnit="1.0" max="20.0" minorTickCount="0" snapToTicks="true" />
         <Label fx:id="shootingLabel" layoutX="222.0" layoutY="49.0" text="Label" />
         <Label fx:id="meleeLabel" layoutX="222.0" layoutY="66.0" text="Label" />
-        <Label fx:id="socialLabel" layoutX="222.0" layoutY="83.0" text="Label" />
-        <Label fx:id="animalLabel" layoutX="222.0" layoutY="100.0" text="Label" />
+        <Label fx:id="socialLabel" layoutX="222.0" layoutY="224.0" text="Label" />
+        <Label fx:id="animalLabel" layoutX="222.0" layoutY="152.0" text="Label" />
         <Slider fx:id="shootingSlider" layoutX="82.0" layoutY="51.0" majorTickUnit="1.0" max="20.0" minorTickCount="0" snapToTicks="true" />
         <Slider fx:id="meleeSlider" layoutX="82.0" layoutY="67.0" majorTickUnit="1.0" max="20.0" minorTickCount="0" snapToTicks="true" />
-        <Slider fx:id="socialSlider" layoutX="82.0" layoutY="84.0" majorTickUnit="1.0" max="20.0" minorTickCount="0" snapToTicks="true" />
-        <Slider fx:id="medicineSlider" layoutX="82.0" layoutY="118.0" majorTickUnit="1.0" max="20.0" minorTickCount="0" snapToTicks="true" />
-        <Slider fx:id="cookingSlider" layoutX="82.0" layoutY="135.0" majorTickUnit="1.0" max="20.0" minorTickCount="0" snapToTicks="true" />
-        <Slider fx:id="gardeningSlider" layoutX="82.0" layoutY="152.0" majorTickUnit="1.0" max="20.0" minorTickCount="0" snapToTicks="true" />
-        <Slider fx:id="miningSlider" layoutX="82.0" layoutY="169.0" majorTickUnit="1.0" max="20.0" minorTickCount="0" snapToTicks="true" />
-        <Slider fx:id="constructionSlider" layoutX="82.0" layoutY="186.0" majorTickUnit="1.0" max="20.0" minorTickCount="0" snapToTicks="true" />
-        <Slider fx:id="craftingSlider" layoutX="82.0" layoutY="202.0" majorTickUnit="1.0" max="20.0" minorTickCount="0" snapToTicks="true" />
-        <Slider fx:id="artSlider" layoutX="82.0" layoutY="220.0" majorTickUnit="1.0" max="20.0" minorTickCount="0" snapToTicks="true" />
-        <Slider fx:id="researchSlider" layoutX="82.0" layoutY="237.0" majorTickUnit="1.0" max="20.0" minorTickCount="0" snapToTicks="true" />
-        <Label fx:id="medicineLabel" layoutX="222.0" layoutY="117.0" text="Label" />
-        <Label fx:id="cookingLabel" layoutX="222.0" layoutY="133.0" text="Label" />
-        <Label fx:id="gardeningLabel" layoutX="222.0" layoutY="150.0" text="Label" />
-        <Label fx:id="miningLabel" layoutX="222.0" layoutY="167.0" text="Label" />
-        <Label fx:id="constructionLabel" layoutX="222.0" layoutY="185.0" text="Label" />
-        <Label fx:id="craftingLabel" layoutX="222.0" layoutY="201.0" text="Label" />
-        <Label fx:id="artLabel" layoutX="222.0" layoutY="218.0" text="Label" />
-        <Label fx:id="researchLabel" layoutX="222.0" layoutY="235.0" text="Label" />
+        <Slider fx:id="socialSlider" layoutX="82.0" layoutY="225.0" majorTickUnit="1.0" max="20.0" minorTickCount="0" snapToTicks="true" />
+        <Slider fx:id="medicineSlider" layoutX="82.0" layoutY="206.0" majorTickUnit="1.0" max="20.0" minorTickCount="0" snapToTicks="true" />
+        <Slider fx:id="cookingSlider" layoutX="82.0" layoutY="120.0" majorTickUnit="1.0" max="20.0" minorTickCount="0" snapToTicks="true" />
+        <Slider fx:id="gardeningSlider" layoutX="82.0" layoutY="137.0" majorTickUnit="1.0" max="20.0" minorTickCount="0" snapToTicks="true" />
+        <Slider fx:id="miningSlider" layoutX="82.0" layoutY="102.0" majorTickUnit="1.0" max="20.0" minorTickCount="0" snapToTicks="true" />
+        <Slider fx:id="constructionSlider" layoutX="82.0" layoutY="84.0" majorTickUnit="1.0" max="20.0" minorTickCount="0" snapToTicks="true" />
+        <Slider fx:id="craftingSlider" layoutX="82.0" layoutY="171.0" majorTickUnit="1.0" max="20.0" minorTickCount="0" snapToTicks="true" />
+        <Slider fx:id="artSlider" layoutX="82.0" layoutY="187.0" majorTickUnit="1.0" max="20.0" minorTickCount="0" snapToTicks="true" />
+        <Slider fx:id="researchSlider" layoutX="82.0" layoutY="243.0" majorTickUnit="1.0" max="20.0" minorTickCount="0" snapToTicks="true" />
+        <Label fx:id="medicineLabel" layoutX="222.0" layoutY="206.0" text="Label" />
+        <Label fx:id="cookingLabel" layoutX="222.0" layoutY="118.0" text="Label" />
+        <Label fx:id="gardeningLabel" layoutX="222.0" layoutY="135.0" text="Label" />
+        <Label fx:id="miningLabel" layoutX="222.0" layoutY="100.0" text="Label" />
+        <Label fx:id="constructionLabel" layoutX="222.0" layoutY="83.0" text="Label" />
+        <Label fx:id="craftingLabel" layoutX="222.0" layoutY="170.0" text="Label" />
+        <Label fx:id="artLabel" layoutX="222.0" layoutY="187.0" text="Label" />
+        <Label fx:id="researchLabel" layoutX="222.0" layoutY="241.0" text="Label" />
         <RadioButton layoutX="285.0" layoutY="50.0" mnemonicParsing="false" text="1">
             <toggleGroup>
                 <ToggleGroup fx:id="shootGroup" />
             </toggleGroup>
         </RadioButton>
         <RadioButton layoutX="315.0" layoutY="50.0" mnemonicParsing="false" text="2" toggleGroup="$shootGroup" />
-        <RadioButton layoutX="285.0" layoutY="66.0" mnemonicParsing="false"  text="1">
+        <RadioButton layoutX="285.0" layoutY="66.0" mnemonicParsing="false" text="1">
             <toggleGroup>
                 <ToggleGroup fx:id="meleeGroup" />
             </toggleGroup>
         </RadioButton>
-        <RadioButton layoutX="315.0" layoutY="66.0" mnemonicParsing="false"  text="2" toggleGroup="$meleeGroup" />
-        <RadioButton layoutX="285.0" layoutY="83.0" mnemonicParsing="false"  text="1">
+        <RadioButton layoutX="315.0" layoutY="66.0" mnemonicParsing="false" text="2" toggleGroup="$meleeGroup" />
+        <RadioButton layoutX="285.0" layoutY="224.0" mnemonicParsing="false" text="1">
             <toggleGroup>
                 <ToggleGroup fx:id="socialGroup" />
             </toggleGroup>
         </RadioButton>
-        <RadioButton layoutX="315.0" layoutY="83.0" mnemonicParsing="false"  text="2" toggleGroup="$socialGroup" />
-        <RadioButton layoutX="285.0" layoutY="100.0" mnemonicParsing="false"  text="1">
+        <RadioButton layoutX="315.0" layoutY="224.0" mnemonicParsing="false" text="2" toggleGroup="$socialGroup" />
+        <RadioButton layoutX="285.0" layoutY="152.0" mnemonicParsing="false" text="1">
             <toggleGroup>
                 <ToggleGroup fx:id="animalGroup" />
             </toggleGroup>
         </RadioButton>
-        <RadioButton layoutX="315.0" layoutY="100.0" mnemonicParsing="false"  text="2" toggleGroup="$animalGroup" />
-        <RadioButton layoutX="285.0" layoutY="116.0" mnemonicParsing="false"  text="1">
+        <RadioButton layoutX="315.0" layoutY="152.0" mnemonicParsing="false" text="2" toggleGroup="$animalGroup" />
+        <RadioButton layoutX="285.0" layoutY="206.0" mnemonicParsing="false" text="1">
             <toggleGroup>
                 <ToggleGroup fx:id="medicineGroup" />
             </toggleGroup>
         </RadioButton>
-        <RadioButton layoutX="315.0" layoutY="116.0" mnemonicParsing="false"  text="2" toggleGroup="$medicineGroup" />
-        <RadioButton layoutX="285.0" layoutY="133.0" mnemonicParsing="false"  text="1">
+        <RadioButton layoutX="315.0" layoutY="206.0" mnemonicParsing="false" text="2" toggleGroup="$medicineGroup" />
+        <RadioButton layoutX="285.0" layoutY="118.0" mnemonicParsing="false" text="1">
             <toggleGroup>
                 <ToggleGroup fx:id="cookingGroup" />
             </toggleGroup>
         </RadioButton>
-        <RadioButton layoutX="315.0" layoutY="133.0" mnemonicParsing="false"  text="2" toggleGroup="$cookingGroup" />
-        <RadioButton layoutX="285.0" layoutY="150.0" mnemonicParsing="false"  text="1">
+        <RadioButton layoutX="315.0" layoutY="118.0" mnemonicParsing="false" text="2" toggleGroup="$cookingGroup" />
+        <RadioButton layoutX="285.0" layoutY="135.0" mnemonicParsing="false" text="1">
             <toggleGroup>
                 <ToggleGroup fx:id="gardeningGroup" />
             </toggleGroup>
         </RadioButton>
-        <RadioButton layoutX="315.0" layoutY="150.0" mnemonicParsing="false"  text="2" toggleGroup="$gardeningGroup" />
-        <RadioButton layoutX="285.0" layoutY="168.0" mnemonicParsing="false"  text="1">
+        <RadioButton layoutX="315.0" layoutY="135.0" mnemonicParsing="false" text="2" toggleGroup="$gardeningGroup" />
+        <RadioButton layoutX="285.0" layoutY="101.0" mnemonicParsing="false" text="1">
             <toggleGroup>
                 <ToggleGroup fx:id="miningGroup" />
             </toggleGroup>
         </RadioButton>
-        <RadioButton layoutX="315.0" layoutY="168.0" mnemonicParsing="false"  text="2" toggleGroup="$miningGroup" />
-        <RadioButton layoutX="285.0" layoutY="184.0" mnemonicParsing="false"  text="1">
+        <RadioButton layoutX="315.0" layoutY="101.0" mnemonicParsing="false" text="2" toggleGroup="$miningGroup" />
+        <RadioButton layoutX="285.0" layoutY="84.0" mnemonicParsing="false" text="1">
             <toggleGroup>
                 <ToggleGroup fx:id="constructionGroup" />
             </toggleGroup>
         </RadioButton>
-        <RadioButton layoutX="315.0" layoutY="184.0" mnemonicParsing="false"  text="2" toggleGroup="$constructionGroup" />
-        <RadioButton layoutX="285.0" layoutY="201.0" mnemonicParsing="false"  text="1">
+        <RadioButton layoutX="315.0" layoutY="84.0" mnemonicParsing="false" text="2" toggleGroup="$constructionGroup" />
+        <RadioButton layoutX="285.0" layoutY="170.0" mnemonicParsing="false" text="1">
             <toggleGroup>
                 <ToggleGroup fx:id="craftingGroup" />
             </toggleGroup>
         </RadioButton>
-        <RadioButton layoutX="315.0" layoutY="201.0" mnemonicParsing="false"  text="2" toggleGroup="$craftingGroup" />
-        <RadioButton layoutX="285.0" layoutY="218.0" mnemonicParsing="false"  text="1">
+        <RadioButton layoutX="315.0" layoutY="170.0" mnemonicParsing="false" text="2" toggleGroup="$craftingGroup" />
+        <RadioButton layoutX="285.0" layoutY="187.0" mnemonicParsing="false" text="1">
             <toggleGroup>
                 <ToggleGroup fx:id="artGroup" />
             </toggleGroup>
         </RadioButton>
-        <RadioButton layoutX="315.0" layoutY="218.0" mnemonicParsing="false"  text="2" toggleGroup="$artGroup" />
-        <RadioButton layoutX="285.0" layoutY="235.0" mnemonicParsing="false"  text="1">
+        <RadioButton layoutX="315.0" layoutY="187.0" mnemonicParsing="false" text="2" toggleGroup="$artGroup" />
+        <RadioButton layoutX="285.0" layoutY="241.0" mnemonicParsing="false" text="1">
             <toggleGroup>
                 <ToggleGroup fx:id="researchGroup" />
             </toggleGroup>
         </RadioButton>
-        <RadioButton layoutX="315.0" layoutY="235.0" mnemonicParsing="false"  text="2" toggleGroup="$researchGroup" />
+        <RadioButton layoutX="315.0" layoutY="241.0" mnemonicParsing="false" text="2" toggleGroup="$researchGroup" />
         <Button fx:id="saveButton" layoutX="16.0" layoutY="361.0" mnemonicParsing="false" text="Save" />
         <RadioButton layoutX="255.0" layoutY="50.0" mnemonicParsing="false" text="0" toggleGroup="$shootGroup" />
-        <RadioButton layoutX="255.0" layoutY="66.0" mnemonicParsing="false"  text="0" toggleGroup="$meleeGroup" />
-        <RadioButton layoutX="255.0" layoutY="83.0" mnemonicParsing="false"  text="0" toggleGroup="$socialGroup" />
-        <RadioButton layoutX="255.0" layoutY="100.0" mnemonicParsing="false"  text="0" toggleGroup="$animalGroup" />
-        <RadioButton layoutX="255.0" layoutY="116.0" mnemonicParsing="false"  text="0" toggleGroup="$medicineGroup" />
-        <RadioButton layoutX="255.0" layoutY="133.0" mnemonicParsing="false"  text="0" toggleGroup="$cookingGroup" />
-        <RadioButton layoutX="255.0" layoutY="150.0" mnemonicParsing="false"  text="0" toggleGroup="$gardeningGroup" />
-        <RadioButton layoutX="255.0" layoutY="168.0" mnemonicParsing="false"  text="0" toggleGroup="$miningGroup" />
-        <RadioButton layoutX="255.0" layoutY="184.0" mnemonicParsing="false"  text="0" toggleGroup="$constructionGroup" />
-        <RadioButton layoutX="255.0" layoutY="201.0" mnemonicParsing="false"  text="0" toggleGroup="$craftingGroup" />
-        <RadioButton layoutX="255.0" layoutY="218.0" mnemonicParsing="false"  text="0" toggleGroup="$artGroup" />
-        <RadioButton layoutX="255.0" layoutY="235.0" mnemonicParsing="false"  text="0" toggleGroup="$researchGroup" />
+        <RadioButton layoutX="255.0" layoutY="66.0" mnemonicParsing="false" text="0" toggleGroup="$meleeGroup" />
+        <RadioButton layoutX="255.0" layoutY="224.0" mnemonicParsing="false" text="0" toggleGroup="$socialGroup" />
+        <RadioButton layoutX="255.0" layoutY="152.0" mnemonicParsing="false" text="0" toggleGroup="$animalGroup" />
+        <RadioButton layoutX="255.0" layoutY="206.0" mnemonicParsing="false" text="0" toggleGroup="$medicineGroup" />
+        <RadioButton layoutX="255.0" layoutY="118.0" mnemonicParsing="false" text="0" toggleGroup="$cookingGroup" />
+        <RadioButton layoutX="255.0" layoutY="135.0" mnemonicParsing="false" text="0" toggleGroup="$gardeningGroup" />
+        <RadioButton layoutX="255.0" layoutY="101.0" mnemonicParsing="false" text="0" toggleGroup="$miningGroup" />
+        <RadioButton layoutX="255.0" layoutY="84.0" mnemonicParsing="false" text="0" toggleGroup="$constructionGroup" />
+        <RadioButton layoutX="255.0" layoutY="170.0" mnemonicParsing="false" text="0" toggleGroup="$craftingGroup" />
+        <RadioButton layoutX="255.0" layoutY="187.0" mnemonicParsing="false" text="0" toggleGroup="$artGroup" />
+        <RadioButton layoutX="255.0" layoutY="241.0" mnemonicParsing="false" text="0" toggleGroup="$researchGroup" />
         <Button fx:id="cancelButton" layoutX="63.0" layoutY="361.0" mnemonicParsing="false" text="Cancel" />
     </children>
 </AnchorPane>
