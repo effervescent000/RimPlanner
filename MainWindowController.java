@@ -120,6 +120,9 @@ public class MainWindowController implements Initializable {
                 alert.setContentText("Roster imported successfully!");
                 alert.showAndWait();
                 pawnTable.setItems(roster.getRoster());
+                roster.getRoster().addListener((ListChangeListener.Change<? extends Pawn> c) -> {
+                    refreshProgress();
+                });
 //                roster.calcTotals();
                 refreshProgress();
             } else {
@@ -164,10 +167,13 @@ public class MainWindowController implements Initializable {
     }
 
     private void colorBar(ProgressBar p, String s, HashMap hm) {
-        if (p.getProgress() * 20 < 5) {
+        if (p.getProgress() * 20 < 4) {
+            //this colors the bar red if our average skill is below 5
             p.setStyle("-fx-accent: red;");
-        } else if (hm.containsKey(s)) {
-            p.setStyle("-fx-accent: orange;"); // TODO I don't know if this is a valid color
+        } else if (hm.containsKey(s) && hm.get(s) != null) {
+            
+            //this colors the bar orange if the skill is considered vulnerable
+            p.setStyle("-fx-accent: orange;");
         } else {
             p.setStyle("-fx-accent: blue;");
         }
