@@ -34,20 +34,60 @@ public class Roster {
     private static int artSkill;
     private static int researchSkill;
 
-    private static ObservableList<Pawn> roster = FXCollections.observableArrayList();
+    private ObservableList<Pawn> roster;
 
     public Roster() {
+        roster = FXCollections.observableArrayList();
     }
 
-    public static void addToRoster(Pawn p) {
+    public void addToRoster(Pawn p) {
         if (!roster.contains(p)) {
+            changeStatTotals(p, true);
             roster.add(p);
         } else {
             System.out.println("Attempted to add duplicate Pawn " + p.getName() + " to roster");
         }
     }
 
-    public static void calcTotals() {
+    public void removeFromRoster(Pawn p) {
+        if (roster.contains(p)) {
+            roster.remove(p);
+            changeStatTotals(p, false);
+        } else {
+            System.out.println("Attempted to remove Pawn " + p.getName() + " from the roster, but they aren't on it.");
+        }
+    }
+
+    /**
+     * Adds or subtracts a pawn's stats from the total counts for the roster.
+     *
+     * @param p The pawn whose stats will be added or removed.
+     * @param b True if the pawn is being added to the roster, false if removed.
+     */
+    private void changeStatTotals(Pawn p, boolean b) {
+        int i;
+        if (b) {
+            i = 1;
+        } else {
+            i = -1;
+        }
+
+        shootingSkill += p.getShootingSkill() * i;
+        meleeSkill += p.getMeleeSkill() * i;
+        socialSkill += p.getSocialSkill() * i;
+        animalSkill += p.getAnimalSkill() * i;
+        doctorSkill += p.getDoctorSkill() * i;
+        cookingSkill += p.getCookingSkill() * i;
+        gardeningSkill += p.getGardeningSkill() * i;
+        miningSkill += p.getMiningSkill() * i;
+        constructionSkill += p.getConstructionSkill() * i;
+        craftingSkill += p.getCraftingSkill() * i;
+        artSkill += p.getArtSkill() * i;
+        researchSkill += p.getResearchSkill() * i;
+
+    }
+
+    public void calcTotals() {
         resetTotals();
 
         for (Pawn p : roster) {
@@ -92,7 +132,7 @@ public class Roster {
         }
     }
 
-    public static HashMap<String, ArrayList<Pawn>> findVulnerable() {
+    public HashMap<String, ArrayList<Pawn>> findVulnerable() {
         HashMap<String, ArrayList<Pawn>> vul = new HashMap<>();
 
         int count = roster.size();
@@ -206,19 +246,18 @@ public class Roster {
         return researchSkill;
     }
 
-   
-    public static ObservableList<Pawn> getRoster() {
+    @XmlElements({
+        @XmlElement(name = "pawn")})
+    public ObservableList<Pawn> getRoster() {
         return roster;
     }
-    
-     @XmlElements({
-        @XmlElement(name = "pawn", type = Pawn.class)})
-    public List<Pawn> getRosterList() {
-        List<Pawn> li = new ArrayList(roster);
-        return li;
-    }
-    
-    
+
+//    @XmlElements({
+//        @XmlElement(name = "pawn", type = Pawn.class)})
+//    public List<Pawn> getRosterList() {
+//        List<Pawn> li = new ArrayList(roster);
+//        return li;
+//    }
     public static int getShootingSkill() {
         return shootingSkill;
     }
@@ -234,7 +273,7 @@ public class Roster {
         return hm;
     }
 
-    private static HashMap<String, ArrayList<Pawn>> checkSkill(HashMap<String, ArrayList<Pawn>> hm, String s) {
+    private HashMap<String, ArrayList<Pawn>> checkSkill(HashMap<String, ArrayList<Pawn>> hm, String s) {
         double bp;
         if (roster.size() == 3) {
             bp = .4;
@@ -252,7 +291,7 @@ public class Roster {
         return hm;
     }
 
-    private static HashMap<String, ArrayList<Pawn>> addToHash(HashMap<String, ArrayList<Pawn>> hm, String s, double bp) {
+    private HashMap<String, ArrayList<Pawn>> addToHash(HashMap<String, ArrayList<Pawn>> hm, String s, double bp) {
         for (Pawn p : roster) {
             switch (s) {
                 case "shooting":

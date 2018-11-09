@@ -17,28 +17,29 @@
             </columns>
         </TableView>
         <ProgressBar fx:id="shootingBar" layoutX="403.0" layoutY="44.0" prefHeight="18.0" prefWidth="136.0" progress="0.0" />
-        <Label layoutX="338.0" layoutY="45.0" text="Shooting" />
+        <Label layoutX="335.0" layoutY="45.0" text="Shooting" AnchorPane.leftAnchor="335.0" />
         <ProgressBar fx:id="socialBar" layoutX="403.0" layoutY="62.0" prefHeight="18.0" prefWidth="136.0" progress="0.0" />
-        <Label layoutX="338.0" layoutY="63.0" text="Social" />
+        <Label layoutX="335.0" layoutY="63.0" text="Social" AnchorPane.leftAnchor="335.0" />
         <ProgressBar fx:id="animalBar" layoutX="403.0" layoutY="80.0" prefHeight="18.0" prefWidth="136.0" progress="0.0" />
         <ProgressBar fx:id="doctorBar" layoutX="403.0" layoutY="98.0" prefHeight="18.0" prefWidth="136.0" progress="0.0" />
         <ProgressBar fx:id="cookingBar" layoutX="403.0" layoutY="116.0" prefHeight="18.0" prefWidth="136.0" progress="0.0" />
         <ProgressBar fx:id="miningBar" layoutX="403.0" layoutY="152.0" prefHeight="18.0" prefWidth="136.0" progress="0.0" />
         <ProgressBar fx:id="constructionBar" layoutX="403.0" layoutY="170.0" prefHeight="18.0" prefWidth="136.0" progress="0.0" />
-        <ProgressBar fx:id="craftingBar" layoutX="403.0" layoutY="183.0" prefHeight="18.0" prefWidth="136.0" progress="0.0" />
-        <ProgressBar fx:id="researchBar" layoutX="403.0" layoutY="201.0" prefHeight="18.0" prefWidth="136.0" progress="0.0" />
-        <Label layoutX="338.0" layoutY="81.0" text="Animals" />
-        <Label layoutX="338.0" layoutY="99.0" text="Medical" />
-        <Label layoutX="338.0" layoutY="117.0" text="Cooking" />
-        <Label layoutX="338.0" layoutY="152.0" text="Mining" />
-        <Label layoutX="335.0" layoutY="171.0" text="Construction" />
-        <Label layoutX="338.0" layoutY="184.0" text="Crafting" />
-        <Label layoutX="338.0" layoutY="202.0" text="Research" />
+        <ProgressBar fx:id="craftingBar" layoutX="403.0" layoutY="188.0" prefHeight="18.0" prefWidth="136.0" progress="0.0" />
+        <ProgressBar fx:id="researchBar" layoutX="403.0" layoutY="206.0" prefHeight="18.0" prefWidth="136.0" progress="0.0" />
+        <Label layoutX="335.0" layoutY="81.0" text="Animals" />
+        <Label layoutX="335.0" layoutY="99.0" text="Medical" />
+        <Label layoutX="335.0" layoutY="117.0" text="Cooking" />
+        <Label layoutX="335.0" layoutY="152.0" text="Mining" />
+        <Label layoutX="335.0" layoutY="171.0" text="Construction" AnchorPane.leftAnchor="335.0" />
+        <Label layoutX="335.0" layoutY="188.0" text="Crafting" />
+        <Label layoutX="335.0" layoutY="206.0" text="Research" />
       <ProgressBar fx:id="gardeningBar" layoutX="403.0" layoutY="134.0" prefHeight="18.0" prefWidth="136.0" progress="0.0" />
-      <Label layoutX="338.0" layoutY="135.0" text="Gardening" />
+      <Label layoutX="335.0" layoutY="135.0" text="Gardening" />
       <Button fx:id="addPawnButton" layoutX="265.0" layoutY="319.0" mnemonicParsing="false" text="Add Pawn" />
       <Button fx:id="editPawnButton" layoutX="265.0" layoutY="344.0" mnemonicParsing="false" text="Edit Pawn" />
       <Button fx:id="exportButton" layoutX="524.0" layoutY="319.0" mnemonicParsing="false" text="Export" />
       <Button fx:id="importButton" layoutX="523.0" layoutY="344.0" mnemonicParsing="false" text="Import" />
+      <Button fx:id="refreshButton" layoutX="521.0" layoutY="294.0" mnemonicParsing="false" text="Refresh" />
     </children>
 </AnchorPane>

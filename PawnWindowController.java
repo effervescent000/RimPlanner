@@ -113,6 +113,9 @@ public class PawnWindowController implements Initializable {
     @FXML
     private Slider socialSlider;
 
+    private Roster roster;
+
+    
     /**
      * Initializes the controller class.
      */
@@ -188,7 +191,7 @@ public class PawnWindowController implements Initializable {
             p.setCraftingPassion(setPassion(craftingGroup));
             p.setResearchPassion(setPassion(researchGroup));
             
-            Roster.addToRoster(p);
+            roster.addToRoster(p);
             
             Stage stage = (Stage) saveButton.getScene().getWindow();
             stage.close();
@@ -201,7 +204,9 @@ public class PawnWindowController implements Initializable {
         });
 
     }
-
+    
+    
+    
     private int setPassion(ToggleGroup tg) {
         ObservableList<Toggle> tl = tg.getToggles();
         if (tl.get(1).isSelected()) {
@@ -215,6 +220,10 @@ public class PawnWindowController implements Initializable {
 
     private int roundSlider(Slider s) {
         return (int) (Math.round(s.getValue()));
+    }
+
+    public void setRoster(Roster roster) {
+        this.roster = roster;
     }
 
 }

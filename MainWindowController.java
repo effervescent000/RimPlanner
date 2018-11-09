@@ -5,7 +5,6 @@
  */
 package rimplanner;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -18,13 +17,13 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 /**
@@ -47,14 +46,18 @@ public class MainWindowController implements Initializable {
             doctorBar, craftingBar, cookingBar, gardeningBar, animalBar,
             constructionBar;
     @FXML
-    private Button addPawnButton, editPawnButton, importButton, exportButton;
+    private Button addPawnButton, editPawnButton, importButton, exportButton, refreshButton;
+
+    private Roster roster;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        pawnTable.setItems(Roster.getRoster());
+        roster = new Roster();
+
+        pawnTable.setItems(roster.getRoster());
         nameCol.setCellValueFactory((TableColumn.CellDataFeatures<Pawn, String> p) -> new ReadOnlyObjectWrapper(p.getValue().getName()));
         ageCol.setCellValueFactory((TableColumn.CellDataFeatures<Pawn, Integer> p) -> new ReadOnlyObjectWrapper(p.getValue().getAge()));
         genderCol.setCellValueFactory((TableColumn.CellDataFeatures<Pawn, String> p) -> {
@@ -65,13 +68,26 @@ public class MainWindowController implements Initializable {
             }
         });
 
+        roster.getRoster().addListener((ListChangeListener.Change<? extends Pawn> c) -> {
+            refreshProgress();
+        });
+
         addPawnButton.setOnAction((ActionEvent e) -> {
             try {
-                Parent root = FXMLLoader.load(getClass().getResource("PawnWindow.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("PawnWindow.fxml"));
+                PawnWindowController controller = new PawnWindowController();
+                if (controller != null) {
+                    controller.setRoster(roster);
+                } else {
+                    System.out.println("controller is null");
+                }
+                loader.setController(controller);
                 Stage stage = new Stage();
-                stage.setScene(new Scene(root));
+                stage.setScene(new Scene((Pane) loader.load()));
+
                 stage.show();
-            } catch (IOException ex) {
+
+            } catch (Exception ex) {
                 Logger.getLogger(MainWindowController.class.getName()).log(Level.SEVERE, null, ex);
             }
         });
@@ -80,7 +96,8 @@ public class MainWindowController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Export status");
             alert.setHeaderText(null);
-            if (IOSave.buildXML()) {
+            IOSave xmlBuilder = new IOSave();
+            if (xmlBuilder.buildXML(roster)) {
                 alert.setContentText("Roster exported successfully!");
                 alert.showAndWait();
             } else {
@@ -89,12 +106,12 @@ public class MainWindowController implements Initializable {
             }
         });
 
-        //TODO load default file containing roster info
-        refreshProgress();
-
-        Roster.getRoster().addListener((ListChangeListener.Change<? extends Pawn> c) -> {
+        refreshButton.setOnAction((ActionEvent e) -> {
             refreshProgress();
         });
+
+        //TODO load default file containing roster info
+        refreshProgress();
 
     }
 
@@ -111,10 +128,10 @@ public class MainWindowController implements Initializable {
         craftingBar.setProgress(getProgValue("crafting"));
         researchBar.setProgress(getProgValue("research"));
 
-        HashMap<String, ArrayList<Pawn>> hm = Roster.findVulnerable();
+        HashMap<String, ArrayList<Pawn>> hm = roster.findVulnerable();
 
         //again, don't bother with these calcs if we don't have at least 3 colonists
-        if (Roster.getRoster().size() >= 3) {
+        if (roster.getRoster().size() >= 3) {
             colorBar(shootingBar, "shooting", hm);
             colorBar(socialBar, "social", hm);
             colorBar(animalBar, "animal", hm);
@@ -140,39 +157,39 @@ public class MainWindowController implements Initializable {
     }
 
     private double getProgValue(String s) {
-        int t = Roster.getRoster().size(); // t for total
-        int c = 0; // c for total Count
+        int t = 0; // t for total
+        int c = roster.getRoster().size();; // c for total Count
 
         switch (s) {
             case "shooting":
-                c = Roster.getShootingSkill();
+                t = Roster.getShootingSkill();
                 break;
             case "social":
-                c = Roster.getSocialSkill();
+                t = Roster.getSocialSkill();
                 break;
             case "animal":
-                c = Roster.getAnimalSkill();
+                t = Roster.getAnimalSkill();
                 break;
             case "doctor":
-                c = Roster.getDoctorSkill();
+                t = Roster.getDoctorSkill();
                 break;
             case "cooking":
-                c = Roster.getCookingSkill();
+                t = Roster.getCookingSkill();
                 break;
             case "gardening":
-                c = Roster.getGardeningSkill();
+                t = Roster.getGardeningSkill();
                 break;
             case "mining":
-                c = Roster.getMiningSkill();
+                t = Roster.getMiningSkill();
                 break;
             case "construction":
-                c = Roster.getConstructionSkill();
+                t = Roster.getConstructionSkill();
                 break;
             case "crafting":
-                c = Roster.getCraftingSkill();
+                t = Roster.getCraftingSkill();
                 break;
             case "research":
-                c = Roster.getResearchSkill();
+                t = Roster.getResearchSkill();
                 break;
             default:
                 throw new AssertionError();
@@ -184,6 +201,14 @@ public class MainWindowController implements Initializable {
             return 0;
         }
 
+    }
+
+    public Roster getRoster() {
+        return roster;
+    }
+
+    public void setRoster(Roster roster) {
+        this.roster = roster;
     }
 
 }

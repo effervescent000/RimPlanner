@@ -9,13 +9,13 @@ import java.util.ArrayList;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author Tara
  */
-@XmlType
+
+@XmlRootElement
 public class Pawn {
 
 //    private String firstName;
@@ -74,77 +74,77 @@ public class Pawn {
         traits = new ArrayList<>();
     }
 
-    @XmlAttribute
+    @XmlElement
     public String getAdultBS() {
         return adultBS;
     }
     
-    @XmlElement
+    @XmlAttribute
     public int getAge() {
         return age;
     }
 
-    @XmlAttribute
+    @XmlElement
     public int getAnimalPassion() {
         return animalPassion;
     }
     
-    @XmlAttribute
+    @XmlElement
     public int getAnimalSkill() {
         return animalSkill;
     }
 
-    @XmlAttribute
+    @XmlElement
     public int getArtPassion() {
         return artPassion;
     }
 
-    @XmlAttribute
+    @XmlElement
     public int getArtSkill() {
         return artSkill;
     }
 
-    @XmlAttribute
+    @XmlElement
     public String getChildBS() {
         return childBS;
     }
 
-    @XmlAttribute
+    @XmlElement
     public int getConstructionPassion() {
         return constructionPassion;
     }
 
-    @XmlAttribute
+    @XmlElement
     public int getConstructionSkill() {
         return constructionSkill;
     }
 
-    @XmlAttribute
+    @XmlElement
     public int getCookingPassion() {
         return cookingPassion;
     }
 
-    @XmlAttribute
+    @XmlElement
     public int getCookingSkill() {
         return cookingSkill;
     }
 
-    @XmlAttribute
+    @XmlElement
     public int getCraftingPassion() {
         return craftingPassion;
     }
 
-    @XmlAttribute
+    @XmlElement
     public int getCraftingSkill() {
         return craftingSkill;
     }
 
-    @XmlAttribute
+    @XmlElement
     public int getDoctorPassion() {
         return doctorPassion;
     }
 
-    @XmlAttribute
+    @XmlElement
     public int getDoctorSkill() {
         return doctorSkill;
     }
@@ -153,12 +153,12 @@ public class Pawn {
 //        return firstName;
 //    }
 
-    @XmlAttribute
+    @XmlElement
     public int getGardeningPassion() {
         return gardeningPassion;
     }
 
-    @XmlAttribute
+    @XmlElement
     public int getGardeningSkill() {
         return gardeningSkill;
     }
@@ -167,77 +167,77 @@ public class Pawn {
 //        return lastName;
 //    }
 
-    @XmlAttribute
+    @XmlElement
     public int getMeleePassion() {
         return meleePassion;
     }
 
-    @XmlAttribute
+    @XmlElement
     public int getMeleeSkill() {
         return meleeSkill;
     }
 
-    @XmlAttribute
+    @XmlElement
     public int getMiningPassion() {
         return miningPassion;
     }
 
-    @XmlAttribute
+    @XmlElement
     public int getMiningSkill() {
         return miningSkill;
     }
 
-    @XmlElement
+    @XmlAttribute
     public String getName() {
         return name;
     }
 
-    @XmlAttribute
+    @XmlElement
     public int getResearchPassion() {
         return researchPassion;
     }
 
-    @XmlAttribute
+    @XmlElement
     public int getResearchSkill() {
         return researchSkill;
     }
 
-    @XmlAttribute
+    @XmlElement
     public int getShootingPassion() {
         return shootingPassion;
     }
 
-    @XmlAttribute
+    @XmlElement
     public int getShootingSkill() {
         return shootingSkill;
     }
 
-    @XmlAttribute
+    @XmlElement
     public int getSocialPassion() {
         return socialPassion;
     }
 
-    @XmlAttribute
+    @XmlElement
     public int getSocialSkill() {
         return socialSkill;
     }
 
-    @XmlAttribute
+    @XmlElement
     public ArrayList<String> getTraits() {
         return traits;
     }
 
-    @XmlAttribute
+    @XmlElement
     public boolean isCleaningCapable() {
         return cleaningCapable;
     }
 
-    @XmlAttribute
+    @XmlElement
     public boolean isFemale() {
         return female;
     }
 
-    @XmlAttribute
+    @XmlElement
     public boolean isHaulingCapable() {
         return haulingCapable;
     }

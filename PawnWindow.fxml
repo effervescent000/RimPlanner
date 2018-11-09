@@ -8,7 +8,7 @@
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rimplanner.PawnWindowController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
     <children>
         <TextField fx:id="nameText" layoutX="14.0" layoutY="14.0" promptText="Name" />
         <TextField fx:id="ageText" layoutX="170.0" layoutY="14.0" prefHeight="25.0" prefWidth="51.0" promptText="Age" />
