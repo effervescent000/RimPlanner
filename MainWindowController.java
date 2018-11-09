@@ -166,11 +166,11 @@ public class MainWindowController implements Initializable {
 
     }
 
-    private void colorBar(ProgressBar p, String s, HashMap hm) {
+    private void colorBar(ProgressBar p, String s, HashMap<String, ArrayList<Pawn>> hm) {
         if (p.getProgress() * 20 < 4) {
             //this colors the bar red if our average skill is below 5
             p.setStyle("-fx-accent: red;");
-        } else if (hm.containsKey(s) && hm.get(s) != null) {
+        } else if (hm.containsKey(s) && checkVul(hm.get(s))) {
             
             //this colors the bar orange if the skill is considered vulnerable
             p.setStyle("-fx-accent: orange;");
@@ -178,6 +178,22 @@ public class MainWindowController implements Initializable {
             p.setStyle("-fx-accent: blue;");
         }
     }
+    
+    /**
+     * 
+     * 
+     * @param k The value from the vulnerable HashMap for a skill in question.
+     * @return True if the skill is vulnerable, false otherwise.
+     */
+    private boolean checkVul(ArrayList<Pawn> k) {
+        if (k != null) {
+            if (k.size() < Math.round(roster.getRoster().size() * .3)) {
+                return true;
+            }
+        }
+        return false;
+    }
+    
 
     private double getProgValue(String s) {
         double t = 0; // t for total
