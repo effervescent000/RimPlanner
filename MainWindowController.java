@@ -96,7 +96,7 @@ public class MainWindowController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Export status");
             alert.setHeaderText(null);
-            IOSave xmlBuilder = new IOSave();
+            WriteSave xmlBuilder = new WriteSave();
             if (xmlBuilder.buildXML(roster)) {
                 alert.setContentText("Roster exported successfully!");
                 alert.showAndWait();
@@ -110,9 +110,27 @@ public class MainWindowController implements Initializable {
             refreshProgress();
         });
 
-        //TODO load default file containing roster info
-        refreshProgress();
+        importButton.setOnAction((ActionEvent e) -> {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Import status");
+            alert.setHeaderText(null);
+            Roster readXML = new ReadSave().readXML();
+            if (readXML != null) {
+                this.roster = readXML;
+                alert.setContentText("Roster imported successfully!");
+                alert.showAndWait();
+                pawnTable.setItems(roster.getRoster());
+            } else {
+                alert.setContentText("Roster import failed.");
+                alert.showAndWait();
+            }
 
+            if (roster != null) {
+                refreshProgress();
+            }
+        });
+
+//        refreshProgress();
     }
 
     public void refreshProgress() {

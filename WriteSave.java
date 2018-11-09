@@ -13,11 +13,11 @@ import javax.xml.bind.Marshaller;
  *
  * @author Tara
  */
-public class IOSave {
+public class WriteSave {
 
     private static final String save = "pawnsave.xml";
 
-    public IOSave() {
+    public WriteSave() {
     }
 
     /**
