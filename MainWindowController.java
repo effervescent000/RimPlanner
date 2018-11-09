@@ -120,13 +120,11 @@ public class MainWindowController implements Initializable {
                 alert.setContentText("Roster imported successfully!");
                 alert.showAndWait();
                 pawnTable.setItems(roster.getRoster());
+//                roster.calcTotals();
+                refreshProgress();
             } else {
                 alert.setContentText("Roster import failed.");
                 alert.showAndWait();
-            }
-
-            if (roster != null) {
-                refreshProgress();
             }
         });
 
@@ -134,6 +132,7 @@ public class MainWindowController implements Initializable {
     }
 
     public void refreshProgress() {
+        roster.calcTotals();
         shootingBar.setProgress(getProgValue("shooting"));
         //there is no melee bar
         socialBar.setProgress(getProgValue("social"));
@@ -175,8 +174,8 @@ public class MainWindowController implements Initializable {
     }
 
     private double getProgValue(String s) {
-        int t = 0; // t for total
-        int c = roster.getRoster().size();; // c for total Count
+        double t = 0; // t for total
+        double c = roster.getRoster().size(); // c for total Count
 
         switch (s) {
             case "shooting":
@@ -214,7 +213,8 @@ public class MainWindowController implements Initializable {
         }
 
         if (t > 0 && c > 0) {
-            return t / c / 20; //20 because that's the max skill, and we need to calculate a double between 0 and 1 for the progress bar
+            double p = (t / c / 20);
+            return p; //20 because that's the max skill, and we need to calculate a double between 0 and 1 for the progress bar
         } else {
             return 0;
         }

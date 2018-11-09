@@ -38,6 +38,7 @@ public class Roster {
 
     public Roster() {
         roster = FXCollections.observableArrayList();
+        calcTotals();
     }
 
     public void addToRoster(Pawn p) {
