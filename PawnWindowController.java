@@ -114,8 +114,8 @@ public class PawnWindowController implements Initializable {
     private Slider socialSlider;
 
     private Roster roster;
+    private Pawn pawn;
 
-    
     /**
      * Initializes the controller class.
      */
@@ -163,36 +163,41 @@ public class PawnWindowController implements Initializable {
         });
 
         saveButton.setOnAction((ActionEvent e) -> {
-            Pawn p = new Pawn(nameText.getText(), Integer.valueOf(ageText.getText()));
 
-            p.setFemale(fRadio.isSelected());
+            if (pawn == null) {
+                pawn = new Pawn(nameText.getText(), Integer.valueOf(ageText.getText()));
+            }
+            if (!roster.getRoster().contains(pawn)) {
+                roster.addToRoster(pawn);
+            }
 
-            p.setShootingSkill(roundSlider(shootingSlider));
-            p.setMeleeSkill(roundSlider(meleeSlider));
-            p.setSocialSkill(roundSlider(socialSlider));
-            p.setAnimalSkill(roundSlider(animalSlider));
-            p.setDoctorSkill(roundSlider(medicineSlider));
-            p.setCookingSkill(roundSlider(cookingSlider));
-            p.setGardeningSkill(roundSlider(gardeningSlider));
-            p.setConstructionSkill(roundSlider(constructionSlider));
-            p.setMiningSkill(roundSlider(miningSlider));
-            p.setCraftingSkill(roundSlider(craftingSlider));
-            p.setResearchSkill(roundSlider(researchSlider));
+            pawn.setFemale(fRadio.isSelected());
 
-            p.setShootingPassion(setPassion(shootGroup));
-            p.setMeleePassion(setPassion(meleeGroup));
-            p.setSocialPassion(setPassion(socialGroup));
-            p.setAnimalPassion(setPassion(animalGroup));
-            p.setDoctorPassion(setPassion(medicineGroup));
-            p.setCookingPassion(setPassion(cookingGroup));
-            p.setGardeningPassion(setPassion(gardeningGroup));
-            p.setConstructionPassion(setPassion(constructionGroup));
-            p.setMiningPassion(setPassion(miningGroup));
-            p.setCraftingPassion(setPassion(craftingGroup));
-            p.setResearchPassion(setPassion(researchGroup));
-            
-            roster.addToRoster(p);
-            
+            pawn.setShootingSkill(roundSlider(shootingSlider));
+            pawn.setMeleeSkill(roundSlider(meleeSlider));
+            pawn.setSocialSkill(roundSlider(socialSlider));
+            pawn.setAnimalSkill(roundSlider(animalSlider));
+            pawn.setDoctorSkill(roundSlider(medicineSlider));
+            pawn.setCookingSkill(roundSlider(cookingSlider));
+            pawn.setGardeningSkill(roundSlider(gardeningSlider));
+            pawn.setConstructionSkill(roundSlider(constructionSlider));
+            pawn.setMiningSkill(roundSlider(miningSlider));
+            pawn.setCraftingSkill(roundSlider(craftingSlider));
+            pawn.setResearchSkill(roundSlider(researchSlider));
+
+            pawn.setShootingPassion(setPassion(shootGroup));
+            pawn.setMeleePassion(setPassion(meleeGroup));
+            pawn.setSocialPassion(setPassion(socialGroup));
+            pawn.setAnimalPassion(setPassion(animalGroup));
+            pawn.setDoctorPassion(setPassion(medicineGroup));
+            pawn.setCookingPassion(setPassion(cookingGroup));
+            pawn.setGardeningPassion(setPassion(gardeningGroup));
+            pawn.setConstructionPassion(setPassion(constructionGroup));
+            pawn.setMiningPassion(setPassion(miningGroup));
+            pawn.setArtPassion(setPassion(artGroup));
+            pawn.setCraftingPassion(setPassion(craftingGroup));
+            pawn.setResearchPassion(setPassion(researchGroup));
+
             Stage stage = (Stage) saveButton.getScene().getWindow();
             stage.close();
 
@@ -204,9 +209,7 @@ public class PawnWindowController implements Initializable {
         });
 
     }
-    
-    
-    
+
     private int setPassion(ToggleGroup tg) {
         ObservableList<Toggle> tl = tg.getToggles();
         if (tl.get(1).isSelected()) {
@@ -224,6 +227,113 @@ public class PawnWindowController implements Initializable {
 
     public void setRoster(Roster roster) {
         this.roster = roster;
+    }
+
+    public void setPawn(Pawn p) {
+        if (nameText == null) {
+            System.out.println("nameText is null");
+        }
+        nameText.setText(p.getName());
+        ageText.setText(Integer.toString(p.getAge()));
+        if (p.isFemale()) {
+            fRadio.setSelected(true);
+        } else {
+            mRadio.setSelected(true);
+        }
+        shootingSlider.setValue(p.getShootingSkill());
+        meleeSlider.setValue(p.getMeleeSkill());
+        constructionSlider.setValue(p.getConstructionSkill());
+        miningSlider.setValue(p.getMiningSkill());
+        cookingSlider.setValue(p.getCookingSkill());
+        gardeningSlider.setValue(p.getGardeningSkill());
+        animalSlider.setValue(p.getAnimalSkill());
+        craftingSlider.setValue(p.getCraftingSkill());
+        artSlider.setValue(p.getArtSkill());
+        medicineSlider.setValue(p.getDoctorSkill());
+        socialSlider.setValue(p.getSocialSkill());
+        researchSlider.setValue(p.getResearchSkill());
+        if (!findToggle(p.getShootingPassion(), shootGroup.getToggles())) {
+            System.out.println("Failed to match Pawn " + p.getName() + "'s shooting passion to a Radio Button.");
+            return;
+        }
+        if (!findToggle(p.getMeleePassion(), meleeGroup.getToggles())) {
+            System.out.println("Failed to match Pawn " + p.getName() + "'s melee passion to a Radio Button.");
+            return;
+        }
+        if (!findToggle(p.getSocialPassion(), socialGroup.getToggles())) {
+            System.out.println("Failed to match Pawn " + p.getName() + "'s social passion to a Radio Button.");
+            return;
+        }
+        if (!findToggle(p.getAnimalPassion(), animalGroup.getToggles())) {
+            System.out.println("Failed to match Pawn " + p.getName() + "'s animal passion to a Radio Button.");
+            return;
+        }
+        if (!findToggle(p.getDoctorPassion(), medicineGroup.getToggles())) {
+            System.out.println("Failed to match Pawn " + p.getName() + "'s medicine passion to a Radio Button.");
+            return;
+        }
+        if (!findToggle(p.getCookingPassion(), cookingGroup.getToggles())) {
+            System.out.println("Failed to match Pawn " + p.getName() + "'s cooking passion to a Radio Button.");
+            return;
+        }
+        if (!findToggle(p.getMiningPassion(), miningGroup.getToggles())) {
+            System.out.println("Failed to match Pawn " + p.getName() + "'s mining passion to a Radio Button.");
+            return;
+        }
+        if (!findToggle(p.getConstructionPassion(), constructionGroup.getToggles())) {
+            System.out.println("Failed to match Pawn " + p.getName() + "'s construction passion to a Radio Button.");
+            return;
+        }
+        if (!findToggle(p.getGardeningPassion(), gardeningGroup.getToggles())) {
+            System.out.println("Failed to match Pawn " + p.getName() + "'s gardening passion to a Radio Button.");
+            return;
+        }
+        if (!findToggle(p.getCraftingPassion(), craftingGroup.getToggles())) {
+            System.out.println("Failed to match Pawn " + p.getName() + "'s crafting passion to a Radio Button.");
+            return;
+        }
+        if (!findToggle(p.getArtPassion(), artGroup.getToggles())) {
+            System.out.println("Failed to match Pawn " + p.getName() + "'s art passion to a Radio Button.");
+            return;
+        }
+        if (!findToggle(p.getResearchPassion(), researchGroup.getToggles())) {
+            System.out.println("Failed to match Pawn " + p.getName() + "'s research passion to a Radio Button.");
+            return;
+        }
+        this.pawn = p;
+
+    }
+
+    /**
+     * Selects the correct Radio Button to match a Pawn's passion level.
+     *
+     * @param passion The passion level of a given pawn.
+     * @param tg      The ObservableList of a toggle group.
+     * @return true if method successfully matched the passion level with a
+     *         Toggle and selected it; false otherwise.
+     */
+    private boolean findToggle(int passion, ObservableList<Toggle> tg) {
+        Toggle toggle = null;
+        switch (passion) {
+            case 0:
+                toggle = tg.get(0);
+                break;
+            case 1:
+                toggle = tg.get(1);
+                break;
+            case 2:
+                toggle = tg.get(2);
+                break;
+            default:
+                System.out.println("Pawn's passion set to invalid value (found in findToggle())");
+        }
+        if (toggle != null) {
+            toggle.setSelected(true);
+            return true;
+        } else {
+            return false;
+        }
+
     }
 
 }

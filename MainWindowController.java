@@ -92,6 +92,32 @@ public class MainWindowController implements Initializable {
             }
         });
 
+        editPawnButton.setOnAction((ActionEvent e) -> {
+
+            try {
+
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("PawnWindow.fxml"));
+                PawnWindowController controller = new PawnWindowController();
+
+                if (controller != null) {
+                    controller.setRoster(roster);
+
+                } else {
+                    System.out.println("controller is null");
+                }
+                loader.setController(controller);
+
+                Stage stage = new Stage();
+                stage.setScene(new Scene((Pane) loader.load()));
+                controller.setPawn(pawnTable.getSelectionModel().getSelectedItem());
+                stage.show();
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+
+        });
+
         exportButton.setOnAction((ActionEvent e) -> {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Export status");
@@ -131,7 +157,6 @@ public class MainWindowController implements Initializable {
             }
         });
 
-//        refreshProgress();
     }
 
     public void refreshProgress() {
@@ -171,17 +196,17 @@ public class MainWindowController implements Initializable {
             //this colors the bar red if our average skill is below 5
             p.setStyle("-fx-accent: red;");
         } else if (hm.containsKey(s) && checkVul(hm.get(s))) {
-            
+
             //this colors the bar orange if the skill is considered vulnerable
             p.setStyle("-fx-accent: orange;");
         } else {
             p.setStyle("-fx-accent: blue;");
         }
     }
-    
+
     /**
-     * 
-     * 
+     *
+     *
      * @param k The value from the vulnerable HashMap for a skill in question.
      * @return True if the skill is vulnerable, false otherwise.
      */
@@ -193,7 +218,6 @@ public class MainWindowController implements Initializable {
         }
         return false;
     }
-    
 
     private double getProgValue(String s) {
         double t = 0; // t for total
