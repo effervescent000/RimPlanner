@@ -36,10 +36,11 @@
         <Label layoutX="335.0" layoutY="206.0" text="Research" />
       <ProgressBar fx:id="gardeningBar" layoutX="403.0" layoutY="134.0" prefHeight="18.0" prefWidth="136.0" progress="0.0" />
       <Label layoutX="335.0" layoutY="135.0" text="Gardening" />
-      <Button fx:id="addPawnButton" layoutX="265.0" layoutY="319.0" mnemonicParsing="false" text="Add Pawn" />
-      <Button fx:id="editPawnButton" layoutX="265.0" layoutY="344.0" mnemonicParsing="false" text="Edit Pawn" />
+      <Button fx:id="addPawnButton" layoutX="264.0" layoutY="282.0" mnemonicParsing="false" text="Add Pawn" />
+      <Button fx:id="editPawnButton" layoutX="265.0" layoutY="307.0" mnemonicParsing="false" text="Edit Pawn" />
       <Button fx:id="exportButton" layoutX="524.0" layoutY="319.0" mnemonicParsing="false" text="Export" />
       <Button fx:id="importButton" layoutX="523.0" layoutY="344.0" mnemonicParsing="false" text="Import" />
       <Button fx:id="refreshButton" layoutX="521.0" layoutY="294.0" mnemonicParsing="false" text="Refresh" />
+      <Button fx:id="removeButton" layoutX="254.0" layoutY="332.0" mnemonicParsing="false" text="Remove Pawn" />
     </children>
 </AnchorPane>

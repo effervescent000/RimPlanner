@@ -46,7 +46,7 @@ public class MainWindowController implements Initializable {
             doctorBar, craftingBar, cookingBar, gardeningBar, animalBar,
             constructionBar;
     @FXML
-    private Button addPawnButton, editPawnButton, importButton, exportButton, refreshButton;
+    private Button addPawnButton, editPawnButton, importButton, exportButton, refreshButton, removeButton;
 
     private Roster roster;
 
@@ -116,6 +116,19 @@ public class MainWindowController implements Initializable {
                 ex.printStackTrace();
             }
 
+        });
+
+        removeButton.setOnAction((ActionEvent e) -> {
+            try {
+                Pawn selected = pawnTable.getSelectionModel().getSelectedItem();
+                if (selected != null) {
+                    if (roster.getRoster().contains(selected)) {
+                        roster.removeFromRoster(selected);
+                    }
+                }
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
         });
 
         exportButton.setOnAction((ActionEvent e) -> {
